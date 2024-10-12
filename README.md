@@ -22,7 +22,7 @@ Peddy is a pet adoption website , here you can adopt your pet. In this website y
 4. Block Scope Variables `var, let, const`
 5. Promise `fetch(url).than()`
 
-## [Click To See Live Deployment]()
+## [Click To See Live Deployment](https://peddy-three.vercel.app/)
 
-- Github Privet Repository Link :- 
-- Live Perview Link :- 
+- Github Privet Repository Link :- https://github.com/programming-hero-web-course2/b10a6-pet-adoption-mdabufaysaljoy
+- Live Perview Link :- https://peddy-three.vercel.app/
