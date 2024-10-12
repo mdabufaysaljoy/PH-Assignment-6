@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Peddy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        * {
+            font-family: "Lato", serif;
+            scroll-behavior: smooth;
+        }
+
+        .loader {
+            color: #333;
+            position: relative;
+            font-size: 11px;
+            background: #FFF;
+            animation: escaleY 1s infinite ease-in-out;
+            width: 1em;
+            height: 4em;
+            animation-delay: -0.16s;
+        }
+
+        .loader:before,
+        .loader:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 2em;
+            background: #FFF;
+            width: 1em;
+            height: 4em;
+            animation: escaleY 1s infinite ease-in-out;
+        }
+
+        .loader:before {
+            left: -2em;
+            animation-delay: -0.32s;
+        }
+
+        @keyframes escaleY {
+
+            0%,
+            80%,
+            100% {
+                box-shadow: 0 0;
+                height: 4em;
+            }
+
+            40% {
+                box-shadow: 0 -2em;
+                height: 5em;
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        btnBg: '#0E7A81',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities{
+    .btn{
+        @apply px-4 py-2 text-white bg-btnBg rounded-xl;
+    }
+    .categoryBtn{
+        @apply   bg-[#0E7A811A] rounded-full border-2 border-[#0E7A81];
+    }
+    .card{
+        @apply border-2  rounded-xl p-4;
+    }
+    .card_h3{
+        @apply text-xl font-bold pt-4;
+    }
+    .card_infoSpanGroup{
+        @apply  flex flex-col gap-2 py-3;
+    }
+    .spanGroup{
+        @apply pt-4 flex justify-between;
+    }
+    .span1,.span2,.span3,.span4{
+        @apply flex gap-2;
+    }
+    .likeIcon {
+        @apply px-3 py-2 rounded border border-[#0E7A8126] ;
+    }
+    .adopt{
+        @apply text-[#0E7A81] font-bold px-3 py-2 rounded border border-[#0E7A8126] cursor-pointer duration-300 hover:bg-[#0E7A81] hover:text-white;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+
+    <nav class="h-20 relative">
+        <div class="container mx-auto px-4 flex justify-between h-full items-center">
+            <a href="/" class="brand_logo flex gap-4 items-center">
+                <img src='./images/logo.webp' alt='./images/logo.webp' class="" />
+                <p class="text-3xl font-bold">Peddy</p>
+            </a>
+            <div class="nav_list space-x-6 hidden lg:flex">
+                <span>
+                    <a href="#">Home</a>
+                </span>
+                <span>
+                    <a href="/shop">shop</a>
+                </span>
+                <span>
+                    <a href="/contact">contact</a>
+                </span>
+            </div>
+            <div class="profile">
+                <img src='./images/user.svg' alt='./images/user.svg' class="cursor-pointer" />
+            </div>
+            <button onclick="toggleMenu()" class="sm:hidden text-xl" id="bars">
+                <i class="ri-menu-line icon" id="menuIcon"></i>
+            </button>
+            <div class="menu sm:hidden absolute top-20 right-5 rounded-xl divide-x divide-gray-100 bg-gray-100 p-3 flex flex-col items-center"
+                id="menu">
+                <span>
+                    <a href="#">Home</a>
+                </span>
+                <span>
+                    <a href="/shop">shop</a>
+                </span>
+                <span>
+                    <a href="/contact">contact</a>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="heroSection py-8">
+        <div class="container mx-auto px-4 space-y-6">
+            <div class="heroSection_text space-y-6 text-center  sm:w-3/4  mx-auto">
+                <p class="text-lg font-bold text-[#13131399]">Bringing Families Together ❤️‍🔥</p>
+                <h1 class=" text-3xl lg:text-5xl font-bold">Your Path to Adoption Starts Here</h1>
+                <p class="text-sm">It is a long established fact that a reader will be distracted by the readable
+                    content of a page when
+                    looking at its
+                    layout. The point of using Lorem Ipsum is that it has a.</p>
+                <a href="#petsSection" class="btn inline-block">View More</a>
+            </div>
+            <div class="heroSection_image flex justify-center items-center">
+                <img src='./images/pet.webp' alt='./images/pet.webp' class="" />
+            </div>
+        </div>
+    </main>
+
+    <section class="petsSeciton py-16" id="petsSection">
+        <div class="container mx-auto px-4">
+            <div class="staticSection ">
+                <div class="text space-y-6   w-3/4 md:w-1/2 mx-auto text-center">
+                    <h1 class="text-3xl font-extrabold">Adopt Your Best Friend</h1>
+                    <p class="text-sm text-[#131313B2]">It is a long established fact that a reader will be distracted
+                        by the readable
+                        content of a page when looking at its
+                        layout. The point of using Lorem Ipsum is that it has a.</p>
+                </div>
+                <div class="selectSection flex flex-col lg:flex-row justify-between gap-6 py-6" id="categorySelect">
+
+                </div>
+            </div>
+            <div class="flex justify-between">
+                <h2 class="text-lg sm:text-xl font-bold">Best Deal For You</h2>
+                <button class="btn text-sm px-2 py-1">Sort by Price</button>
+            </div>
+            <div class="dynamicSection py-6 flex flex-col lg:flex-row justify-between gap-6">
+                <div class="cardsGroup w-full lg:w-3/4 grid gap-4 place-items-center" id="cardsGroup">
+                </div>
+                <div id="selectedPhotoGroup"
+                    class="selectedPhoto w-full lg:w-1/4 border grid grid-cols-1 lg:grid-cols-2 gap-2 items-start overflow-y-scroll h-[600px] justify-start p-2 rounded-lg">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="adoptModal container mx-auto px-4 fixed top-0 left-0 right-0 bottom-0 w-full h-full flex items-center justify-center bg-[#00000080] hidden"
+        id="adoptModal">
+        <div class="p-4 bg-white rounded-lg flex flex-col items-center space-y-4 justify-center">
+            <img src='./images/logo.webp' alt='' />
+            <h1 class="text-3xl font-bold">Congrates</h1>
+            <p class="text-sm">Adoption process is start for your pet</p>
+            <p class="countdown text-4xl font-bold" id="countdown">3s</p>
+        </div>
+    </div>
+
+    <footer class="footerSection bg-[#131313] text-white py-16">
+        <div class="container mx-auto px-4 flex flex-col lg:flex-row gap-6 justify-between">
+            <section class="address space-y-5">
+                <div class="brand flex gap-2 items-center">
+                    <img src='./images/logo.webp' alt='./images/logo.webp' class="w-4" />
+                    <p class="text-xl font-bold">Peddy</p>
+                </div>
+                <address class="text-[#FFFFFFE5]">
+                    Location: av. Washington 165, NY CA 54003 <br>
+                    Phone: +31 85 964 47 25 <br>
+                    Email: info@yourdomain.com <br>
+                    Openings hours: 9.00 AM - 5.00 PM
+                </address>
+                <div class="social_media flex gap-6">
+                    <img src='./images/facebook.svg' alt='./images/facebook.svg' class="" />
+                    <img src='./images/youtube.svg' alt='./images/youtube.svg' class="" />
+                    <img src='./images/x.svg' alt='./images/x.svg' class="" />
+                    <img src='./images/instagram.svg' alt='./images/instagram.svg' class="" />
+                </div>
+            </section>
+            <section class="links">
+                <p class="pb-4 font-bold">Useful links</p>
+                <div class="links flex flex-col space-y-2 text-[#FFFFFF99]">
+                    <span><a href="#">Home</a></span>
+                    <span><a href="#">About Us</a></span>
+                    <span><a href="#">Animals</a></span>
+                    <span><a href="#">Foundation</a></span>
+                    <span><a href="#">Contact</a></span>
+                </div>
+            </section>
+            <section class="message flex flex-col gap-4">
+                <p class="font-bold">Drop a Message</p>
+                <input type="text" class="bg-[#FFFFFF0D] rounded-xl px-2 py-1 outline-none"
+                    placeholder="Enter your Email">
+                <button class="btn">Subscribe</button>
+            </section>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
